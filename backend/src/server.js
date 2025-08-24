@@ -17,7 +17,7 @@ const __dirname = path.resolve();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://talksy-chat-app.vercel.app",
     credentials: true, // allow frontend to send cookies
   })
 );
