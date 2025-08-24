@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router";
 import useAuthUser from "../hooks/useAuthUser";
-import { BellIcon, HomeIcon, ShipWheelIcon, UsersIcon } from "lucide-react";
+import { BellIcon, HomeIcon, MessagesSquareIcon, UsersIcon } from "lucide-react";
 
 const Sidebar = () => {
   const { authUser } = useAuthUser();
@@ -11,9 +11,9 @@ const Sidebar = () => {
     <aside className="w-64 bg-base-200 border-r border-base-300 hidden lg:flex flex-col h-screen sticky top-0">
       <div className="p-5 border-b border-base-300">
         <Link to="/" className="flex items-center gap-2.5">
-          <ShipWheelIcon className="size-9 text-primary" />
-          <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary  tracking-wider">
-            Streamify
+          <MessagesSquareIcon className="size-9 text-secondary" />
+          <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-secondary  tracking-wider">
+            Talksy
           </span>
         </Link>
       </div>
@@ -51,7 +51,11 @@ const Sidebar = () => {
       </nav>
 
       {/* USER PROFILE SECTION */}
-      <div className="p-4 border-t border-base-300 mt-auto">
+      <div className="p-4 border-base-300 flex-col-reverse justify-end mt-auto">
+                       <Link to="/chatai" className="btn btn-secondary gap-2 border-double border-white/20 mb-4">
+  <MessagesSquareIcon className="size-4" />
+  Chat with AI
+</Link>
         <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="w-10 rounded-full">
