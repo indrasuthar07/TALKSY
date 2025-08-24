@@ -15,12 +15,24 @@ const PORT = process.env.PORT;
 
 const __dirname = path.resolve();
 
+// app.use(
+//   cors({
+//     origin: "https://talksy-chat-app.vercel.app",
+//     credentials: true, // allow frontend to send cookies
+//   })
+// );
+
+
 app.use(
   cors({
     origin: "https://talksy-chat-app.vercel.app",
-    credentials: true, // allow frontend to send cookies
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
+
+app.options("*", cors());
 
 app.use(express.json());
 app.use(cookieParser());
